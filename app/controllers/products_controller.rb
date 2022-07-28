@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
   private
  
   def product_params
-    params.require(:product).permit(:title, :description, :price) # Requirimos la existencia de un objeto "product" y permitimos solo la escritura de los campos permitidos
+    params.require(:product).permit(:title, :description, :price, :photo) # Requirimos la existencia de un objeto "product" y permitimos solo la escritura de los campos permitidos
   end
 
 end

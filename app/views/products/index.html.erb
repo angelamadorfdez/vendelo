@@ -3,7 +3,12 @@
   <% @products.each do |product| %>
     <li>
       <%= link_to product_path(product.id), class:"product" do %>
-        <%= product.title %> | <%= product.price %>€
+        <div>
+          <%= image_tag product.photo, width: 200 if product.photo.attached? %>
+        </div>
+        <div>
+          <%= product.title %> | <%= product.price %>€
+        </div>
       <% end %>
     </li>
   <% end %>
