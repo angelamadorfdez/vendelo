@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  #### ORIGINAL CODE
+  #root "products#index"
+
+  #delete '/products/:id', to: 'products#destroy'
+  #patch '/products/:id', to: 'products#update'
+  #post '/products', to: 'products#create'
+  #get '/products/new', to: 'products#new', as: :new_product
+  #get '/products', to: 'products#index'
+  #get '/products/:id', to: 'products#show', as: :product
+  #get '/products/:id/edit', to: 'products#edit', as: :edit_product  
+
+  #### REFACTOR V1
+  #root "products#index"
+  #resources :products # Genera todas las rutas anteriores
   
-  delete '/products/:id', to: 'products#destroy'
-  patch '/products/:id', to: 'products#update'
-  post '/products', to: 'products#create'
-  get '/products/new', to: 'products#new', as: :new_product
-  get '/products', to: 'products#index'
-  get '/products/:id', to: 'products#show', as: :product
-  get '/products/:id/edit', to: 'products#edit', as: :edit_product
+  #### REFACTOR V2
+  resources :products, path: "/" # Es equivalente a las dos líneas anteriores
 
-  #resources :products, path: 'products'
 end
