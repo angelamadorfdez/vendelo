@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit] # En los métodos/acciones indicados, ejecutamos "set_product" en primer lugar. Nos ahorramos indicarlo explícitamente dentro de cada uno de los métodos/acciones del controlador si simplemente queremos que retorne el contenido del método precargado ("set_product").
   
   def index
-    @products = Product.all.with_attached_photo
+    @products = Product.all
   end
 
   def show
