@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   #resources :products, path: "/" # Es equivalente a las dos líneas anteriores
 
   ### Routes
-  root "products#index"
-  resources :products
   resources :categories, except: :show
+  resources :products, path:"/"
+  
 
 end

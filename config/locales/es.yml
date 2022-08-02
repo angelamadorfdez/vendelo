@@ -36,6 +36,7 @@ es:
   products:
     index:
       title: Productos
+      all: Todos
     show:
       edit: Editar
       delete: Eliminar
