@@ -26,6 +26,16 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_select 'h2', 'PS4 Fat'
   end
+
+  test 'render a list of products filtered by query' do
+    get products_path(query_text: 'ps4')
+
+    assert_response :success
+    assert_select '.category', 3
+    assert_select '.product', 1
+
+    assert_select 'h2', 'PS4 Fat'
+  end
   
   test 'render a detailed product page' do 
     get product_path(products(:ps4))

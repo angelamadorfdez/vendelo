@@ -39,6 +39,7 @@ es:
       all: Todos
       min_price: Precio mínimo
       max_price: Precio máximo
+      query_text: Busca palabra clave
     show:
       edit: Editar
       delete: Eliminar

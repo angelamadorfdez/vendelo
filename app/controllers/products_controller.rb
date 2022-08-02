@@ -16,6 +16,10 @@ class ProductsController < ApplicationController
       @products = @products.where("price <= ?", params[:max_price])
     end
 
+    if params[:query_text].present?
+      @products = @products.search_full_text(params[:query_text])
+    end
+
   end
 
   def show
