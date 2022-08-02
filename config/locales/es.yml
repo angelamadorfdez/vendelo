@@ -40,6 +40,9 @@ es:
       min_price: Precio mínimo
       max_price: Precio máximo
       query_text: Busca palabra clave
+      newest: Recientes
+      cheaper: Más baratos
+      more_expensive: Más caros
     show:
       edit: Editar
       delete: Eliminar

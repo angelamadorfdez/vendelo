@@ -16,11 +16,32 @@
       <%= form.number_field :max_price, placeholder: t('.max_price'), onChange: 'this.form.requestSubmit()', value: params[:max_price]  %>
     </div>
 
+    <!--
+    <div>
+      <%= form.select :order_by, 
+        options_for_select([
+          [t('.recents'), "newest"],
+          [t('.cheaper'), "cheaper"],
+          [t('.more_expensive'), "more_expensive"]], 
+          params[:order_by]), 
+          { }, 
+          { onChange: 'this.form.requestSubmit()' } %>
+    </div>
+    -->
+    <div>
+      <%= form.select :order_by, options_for_select(Product::ORDER_BY.keys.map { |order| [t(".#{order}"), order] }, 
+          params[:order_by]),
+          { }, 
+          { onChange: 'this.form.requestSubmit()' } %>
+    </div>
+
   <% end %>
 
   <%= link_to t('.all'), products_path %>
   <%= render partial: 'category', collection: @categories %>
   
-  <%= render partial: 'product', collection: @products %>
-
+  <div class="products">
+    <%= render partial: 'product', collection: @products %>
+  </div>
+  
 <% end %>
