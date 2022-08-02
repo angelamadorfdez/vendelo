@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   def locale_from_header
-    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first # el idioma que tiene el usuario en su navegador. Se obtiene leyendo la cabecera que se está enviando en la petición.
+    request.env['HTTP_ACCEPT_LANGUAGE']&.scan(/^[a-z]{2}/)&.first # el idioma que tiene el usuario en su navegador. Se obtiene leyendo la cabecera que se está enviando en la petición.
   end
 
 end

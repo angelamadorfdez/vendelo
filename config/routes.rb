@@ -14,8 +14,14 @@ Rails.application.routes.draw do
   #### REFACTOR V1
   #root "products#index"
   #resources :products # Genera todas las rutas anteriores
-  
+
+
   #### REFACTOR V2
-  resources :products, path: "/" # Es equivalente a las dos líneas anteriores
+  #resources :products, path: "/" # Es equivalente a las dos líneas anteriores
+
+  ### Routes
+  root "products#index"
+  resources :products
+  resources :categories, except: :show
 
 end

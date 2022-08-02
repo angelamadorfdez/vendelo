@@ -1,42 +1,70 @@
 es:
   activerecord:
     models:
-      product: 'Producto'
+      product: Producto
+      category: Categoria
     attributes:
       product:
-        title: 'Título'
-        description: 'Descripción'
-        price: 'Precio'
-        photo: 'Foto'
+        title: Título
+        description: Descripción
+        price: Precio
+        photo: Foto
+      category:
+        name: Nombre
     errors:
       models:
         product:
           attributes:
             title:
-              blank: 'no puede estar vacío'
+              blank: no puede estar vacío
             description:
-              blank: 'no puede estar vacío'
+              blank: no puede estar vacío
             price:
-              blank: 'no puede estar vacío'
-  common: 
-    add: 'Crear producto'
-    confirm_message: '¿Estás seguro?'
-    edit: 'Editar'
-    delete: 'Eliminar'
-    ver_todos: 'Ver todos los productos'
+              blank: no puede estar vacío
+        category:
+          attributes:
+            name:
+              blank: no puede estar vacío
+  common:     
+    confirm_message: ¿Estás seguro?
+    back: Volver
+  shared:
+    header:
+      title: Véndelo
+      add_product: Crear nuevo producto
+      see_categories: Ver categorías
   products:
     index:
-      title: 'Productos'
+      title: Productos
     show:
+      edit: Editar
+      delete: Eliminar
     new:
-      title: 'Añadir producto'
+      title: Crear producto
     edit:
-      title: 'Editar producto'      
+      title: Editar producto
     create:
-      created: 'Tu producto se ha creado correctamente.'
+      created: Producto creado correctamente
     update: 
-      updated: 'Tu producto se ha actualizado correctamente.'
+      updated: Producto actualizado correctamente
     destroy:
-      destroyed: 'Tu producto se ha eliminado correctamente.'
+      destroyed: Producto eliminado correctamente
+  categories:
+    index:
+      title: Categorias
+      add: Añadir categoría
+    category:
+      edit: Editar
+      delete: Eliminar
+    new:
+      title: Crear categoría
+    edit:
+      title: Editar categoría     
+    create:
+      created: Categoría creada correctamente
+    update: 
+      updated: Categoría actualizada correctamente
+    destroy:
+      destroyed: Categoría eliminada correctamente
     
  
