@@ -27,14 +27,16 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test 'allow to create a new product' do
     post products_path, params: {
       product: {
-        title: 'Nintendo 64',
-        description: 'Muy buen estado. Falta el mando.',
-        price: 95
+        title: "PS4 Fat",
+        description: "PS4 en buen estado",
+        price: 120,
+        category_id: categories(:videogames).id
         }
     } 
 
     assert_redirected_to products_path
     assert_equal flash[:notice], 'Producto creado correctamente'
+    
   end
 
   test 'does not allow to create a new product with empty fields' do

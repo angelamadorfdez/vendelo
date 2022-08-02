@@ -4,8 +4,10 @@ ps4:
   title: PS4 Fat
   description: PS4 en buen estado
   price: 120
+  category: videogames
 
-switch:
-  title: Nintendo Switch Oled
-  description: Como nueva. Comprada hace 1 mes. Vendo por poco uso.
-  price: 290 
+sandero:
+  title: Dacia Sandero
+  description: Apenas 17000 kilómetros. Urge venta.
+  price: 8290 
+  category: cars
