@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  include Pagy::Backend
+
   around_action :switch_locale # Por cada petición, se llama al método switch_locale
 
   def switch_locale(&action)
@@ -13,3 +15,4 @@ class ApplicationController < ActionController::Base
   end
 
 end
+ 

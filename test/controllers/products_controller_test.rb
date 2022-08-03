@@ -6,7 +6,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select '.category', 10
-    assert_select '.product', 28
+    assert_select '.product', 10
   end
 
   test 'render a list of products filtered by category' do
@@ -22,7 +22,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select '.category', 10
-    assert_select '.product', 19
+    assert_select '.product', 10
 
     assert_select 'h2', 'PS4 Fat'
   end
@@ -41,7 +41,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get products_path(order_by: 'cheaper')
 
     assert_response :success
-    assert_select '.product', 28
+    assert_select '.product', 10
     assert_select '.products .product:first-child h2', 'El hobbit'
   end
 
@@ -49,7 +49,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get products_path(order_by: 'more_expensive')
 
     assert_response :success
-    assert_select '.product', 28
+    assert_select '.product', 10
     assert_select '.products .product:first-child h2', 'Dacia Sandero'
   end
   

@@ -25,6 +25,8 @@ class ProductsController < ApplicationController
       @products = @products.order(order_by).load_async
     end
 
+    @pagy, @products = pagy_countless(@products, items: 10)
+
   end
 
   def show
