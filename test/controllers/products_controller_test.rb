@@ -5,24 +5,24 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get products_path
 
     assert_response :success
-    assert_select '.category', 3
-    assert_select '.product', 2
+    assert_select '.category', 10
+    assert_select '.product', 28
   end
 
   test 'render a list of products filtered by category' do
     get products_path(category_id: categories(:videogames).id)
 
     assert_response :success
-    assert_select '.category', 3
-    assert_select '.product', 1
+    assert_select '.category', 10
+    assert_select '.product', 8
   end
 
   test 'render a list of products filtered by min_price and max_price' do
     get products_path(min_price: 50, max_price: 1000)
 
     assert_response :success
-    assert_select '.category', 3
-    assert_select '.product', 1
+    assert_select '.category', 10
+    assert_select '.product', 19
 
     assert_select 'h2', 'PS4 Fat'
   end
@@ -31,7 +31,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get products_path(query_text: 'ps4')
 
     assert_response :success
-    assert_select '.category', 3
+    assert_select '.category', 10
     assert_select '.product', 1
 
     assert_select 'h2', 'PS4 Fat'
@@ -41,15 +41,15 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get products_path(order_by: 'cheaper')
 
     assert_response :success
-    assert_select '.product', 2
-    assert_select '.products .product:first-child h2', 'PS4 Fat'
+    assert_select '.product', 28
+    assert_select '.products .product:first-child h2', 'El hobbit'
   end
 
   test 'render a list of products filtered by expensive prices first' do
     get products_path(order_by: 'more_expensive')
 
     assert_response :success
-    assert_select '.product', 2
+    assert_select '.product', 28
     assert_select '.products .product:first-child h2', 'Dacia Sandero'
   end
   
