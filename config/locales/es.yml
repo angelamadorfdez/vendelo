@@ -5,6 +5,7 @@ es:
     models:
       product: Producto
       category: Categoria
+      user: Usuario
     attributes:
       product:
         title: Título
@@ -13,6 +14,10 @@ es:
         photo: Foto
       category:
         name: Nombre
+      user:
+        email: Email
+        username: Usuario
+        password_digest: Contraseña
     errors:
       models:
         product:
@@ -27,6 +32,22 @@ es:
           attributes:
             name:
               blank: no puede estar vacío
+        user:
+          attributes:
+            email:
+              blank: no puede estar vacío
+              taken: no disponible
+              invalid: no válido
+            username:
+              blank: no puede estar vacío
+              taken: no disponible
+              invalid: no válido (usa solo letras mayúsculas, minúsculas y números)
+              too_short: debe tener al menos 3 caracteres
+              too_long: debe tener como máximo 15 caracteres
+            password:
+              blank: no puede estar vacío
+              too_short: debe tener al menos 6 caracteres
+
   common:     
     confirm_message: ¿Estás seguro?
     back: Volver
@@ -35,6 +56,12 @@ es:
       title: Véndelo
       add_product: Crear nuevo producto
       see_categories: Ver categorías
+  authentication:
+    users:
+      new:
+        title: "Registro"
+      create:
+        created: "Tu cuenta se ha creado correctamente"
   products:
     index:
       title: Productos
