@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
     #   @products = @products.order(order_by).load_async
     # end
    
-    @products = FindProducts.new.call(params).load_async
+    @products = FindProducts.new.call(product_params_index).load_async
     @pagy, @products = pagy_countless(@products, items: 10)
 
     # MÁS SIMPLE TODAVÍA
@@ -76,6 +76,10 @@ class ProductsController < ApplicationController
 
   def product
     @product = Product.find(params[:id])
+  end
+
+  def product_params_index
+    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by)
   end
  
   def product_params
