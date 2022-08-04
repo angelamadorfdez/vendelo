@@ -62,13 +62,19 @@ es:
         title: "Registro"
       create:
         created: "Tu cuenta se ha creado correctamente"
+    sessions:
+      new:
+        title: "Registro"
+      create:
+        created: Sesión iniciada correctamente
+        failed: Usuario y/o contraseña incorrectos
   products:
     index:
       title: Productos
       all: Todos
       min_price: Precio mínimo
       max_price: Precio máximo
-      query_text: Busca palabra clave
+      query_text: Busca palabra clave 
       newest: Recientes
       cheaper: Más baratos
       more_expensive: Más caros
