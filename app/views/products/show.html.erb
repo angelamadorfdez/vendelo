@@ -7,8 +7,8 @@
 <p class="description"><%= @product.description %></p>
 <p class="price"><%= @product.price %>€</p>
 
-<p><%= link_to t('.edit'), edit_product_path(@product) if @product.user_id == Current.user&.id %></p>
-<p><%= link_to t('.delete'), product_path(@product), data: { turbo_method: :delete, turbo_confirm: t('common.confirm_message') } if @product.user_id == Current.user&.id %></p>
+<p><%= link_to t('.edit'), edit_product_path(@product) if @product.owner? %></p>
+<p><%= link_to t('.delete'), product_path(@product), data: { turbo_method: :delete, turbo_confirm: t('common.confirm_message') } if @product.owner? %></p>
 <!-- Por defecto Rails usa el método HTTP GET por defecto. Para borrar un producto necesito el método DELETE. Tengo que declararlo. Rails 7 usa Turbo para hacerlo. -->
 
 <p><%= link_to t('common.back'), products_path %></p>

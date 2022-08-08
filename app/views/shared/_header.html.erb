@@ -8,7 +8,7 @@
 <% end %>
 
 <%= link_to t('.add_product'), new_product_path if Current.user %>
-<%= link_to t('.see_categories'), categories_path if Current.user %>
+<%= link_to t('.see_categories'), categories_path if Current.user&.admin? %>
 
 <%= link_to t('common.login'), new_session_path unless Current.user %>
 <%= link_to t('common.signin'), new_user_path unless Current.user %>
