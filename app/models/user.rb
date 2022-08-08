@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   
   has_secure_password
-  
+
   validates :email, presence: true, uniqueness: true,
   format: {
       with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i,
@@ -15,6 +15,8 @@ class User < ApplicationRecord
     }
   validates :password, length: { minimum: 6 } # Ojo, usamos password, no password_digest
 
+  has_many :products, dependent: :destroy
+
   before_save :downcase_attributes
 
   private
@@ -23,4 +25,5 @@ class User < ApplicationRecord
     self.username = username.downcase
     self.email = email.downcase
   end
+
 end

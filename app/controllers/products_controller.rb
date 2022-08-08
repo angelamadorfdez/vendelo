@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  skip_before_action :protect_pages, only: [:index, :show]
+  skip_before_action :protect_pages, only: [:index,]
 
   def index
     @categories = Category.all.order(name: :asc).load_async
@@ -48,6 +48,8 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    # @product = Current.user.products.new(product_params)
+
 
     if @product.save
       redirect_to products_path, notice: t('.created')
