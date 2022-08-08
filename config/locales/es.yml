@@ -18,40 +18,13 @@ es:
         email: Email
         username: Usuario
         password_digest: Contraseña
-    errors:
-      models:
-        product:
-          attributes:
-            title:
-              blank: no puede estar vacío
-            description:
-              blank: no puede estar vacío
-            price:
-              blank: no puede estar vacío
-        category:
-          attributes:
-            name:
-              blank: no puede estar vacío
-        user:
-          attributes:
-            email:
-              blank: no puede estar vacío
-              taken: no disponible
-              invalid: no válido
-            username:
-              blank: no puede estar vacío
-              taken: no disponible
-              invalid: no válido (usa solo letras mayúsculas, minúsculas y números)
-              too_short: debe tener al menos 3 caracteres
-              too_long: debe tener como máximo 15 caracteres
-            password:
-              blank: no puede estar vacío
-              too_short: debe tener al menos 6 caracteres
-
   common:     
     confirm_message: ¿Estás seguro?
     back: Volver
     not_logged_in: Tienes que iniciar sesión o crearte una cuenta
+    login: Iniciar sesión
+    signin: Crear cuenta
+    logout: Cerrar sesión
   shared:
     header:
       title: Véndelo
@@ -65,10 +38,12 @@ es:
         created: "Tu cuenta se ha creado correctamente"
     sessions:
       new:
-        title: "Registro"
+        title: "Iniciar sesión"
       create:
         created: Sesión iniciada correctamente
         failed: Usuario y/o contraseña incorrectos
+      destroy:
+        destroyed: Has cerrado tu sesión. Hasta otra.
   products:
     index:
       title: Productos

@@ -3,5 +3,17 @@
   <h1><%= t('app_name') %></h1>
 <% end %>
 
-<%= link_to t('.add_product'), new_product_path %>
-<%= link_to t('.see_categories'), categories_path %>
+<% if Current.user %>
+  <p>Hola, <%= Current.user.username %></p>
+<% end %>
+
+<%= link_to t('.add_product'), new_product_path if Current.user %>
+<%= link_to t('.see_categories'), categories_path if Current.user %>
+
+<%= link_to t('common.login'), new_session_path unless Current.user %>
+<%= link_to t('common.signin'), new_user_path unless Current.user %>
+  
+<%= link_to t('common.logout'), session_path(Current.user.id), data: {
+  turbo_method: :delete, 
+  turbo_confirm: t('common.confirm_message')
+  } if Current.user %>
