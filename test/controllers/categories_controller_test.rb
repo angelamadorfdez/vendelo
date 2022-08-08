@@ -2,6 +2,7 @@ require "test_helper"
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    login
     @category = categories(:videogames)
     @category_withot_products = categories(:real_state)
   end

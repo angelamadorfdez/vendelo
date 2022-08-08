@@ -12,6 +12,7 @@
 
   <body>
     <%= DateTime.now %>
+    <%= Current.user.inspect %>
     <%= render 'shared/flash' %>
     <%= render 'shared/header' %>
     <%= yield %>

@@ -51,6 +51,7 @@ es:
   common:     
     confirm_message: ¿Estás seguro?
     back: Volver
+    not_logged_in: Tienes que iniciar sesión o crearte una cuenta
   shared:
     header:
       title: Véndelo
