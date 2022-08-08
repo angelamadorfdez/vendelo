@@ -25,6 +25,7 @@ es:
     login: Iniciar sesión
     signin: Crear cuenta
     logout: Cerrar sesión
+    not_authorized: No tienes permiso para esta acción
   shared:
     header:
       title: Véndelo
@@ -33,12 +34,12 @@ es:
   authentication:
     users:
       new:
-        title: "Registro"
+        title: Registro
       create:
-        created: "Tu cuenta se ha creado correctamente"
+        created: Tu cuenta se ha creado correctamente
     sessions:
       new:
-        title: "Iniciar sesión"
+        title: Iniciar sesión
       create:
         created: Sesión iniciada correctamente
         failed: Usuario y/o contraseña incorrectos
