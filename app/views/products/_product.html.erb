@@ -3,3 +3,5 @@
     <h2><%= product.title %></h2>
     <p><%= product.price %>€</p>
 <% end %>
+
+<p><%= t('.owner_text') %> <b><%= product.user.username %></b></p>

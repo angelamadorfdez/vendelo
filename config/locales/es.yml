@@ -26,6 +26,7 @@ es:
     signin: Crear cuenta
     logout: Cerrar sesión
     not_authorized: No tienes permiso para esta acción
+    not_found: No existe
   shared:
     header:
       title: Véndelo
@@ -46,6 +47,8 @@ es:
       destroy:
         destroyed: Has cerrado tu sesión. Hasta otra.
   products:
+    product:
+      owner_text: Publicado por
     index:
       title: Productos
       all: Todos
@@ -58,6 +61,7 @@ es:
     show:
       edit: Editar
       delete: Eliminar
+      owner_text: Publicado por
     new:
       title: Crear producto
     edit:
@@ -85,5 +89,8 @@ es:
       updated: Categoría actualizada correctamente
     destroy:
       destroyed: Categoría eliminada correctamente
+  users:
+    show:
+      other_products: Otros productos publicados
     
  

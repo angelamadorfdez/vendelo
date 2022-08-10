@@ -29,4 +29,5 @@ Rails.application.routes.draw do
 
   resources :categories, except: :show
   resources :products, path: '/'
+  resources :users, path: '/user', only: :show, param: :username
 end

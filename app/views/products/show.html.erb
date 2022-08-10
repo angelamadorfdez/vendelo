@@ -11,4 +11,6 @@
 <p><%= link_to t('.delete'), product_path(@product), data: { turbo_method: :delete, turbo_confirm: t('common.confirm_message') } if @product.owner? %></p>
 <!-- Por defecto Rails usa el método HTTP GET por defecto. Para borrar un producto necesito el método DELETE. Tengo que declararlo. Rails 7 usa Turbo para hacerlo. -->
 
-<p><%= link_to t('common.back'), products_path %></p>
+<p><%= t('.owner_text')%> <b><%= link_to @product.user.username, user_path(@product.user.username) %></b></p>
+
+<p><%= link_to t('common.back'), :back %></p>
