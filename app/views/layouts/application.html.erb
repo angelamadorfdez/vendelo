@@ -11,9 +11,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= DateTime.now %>
-    <%= Current.user.inspect %>
+  <body class="bg-green-100">
+    <!--
+    <div class="bg-gray-700 text-white">
+      <%= DateTime.now %>
+      <%= Current.user.inspect %>
+    </div>
+    -->
     <%= render 'shared/flash' %>
     <%= render 'shared/header' %>
     <%= yield %>
