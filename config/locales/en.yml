@@ -1,1 +1,97 @@
+# Temporary. Pending trascrition to english
 en:
+  app_name: Véndelo
+  meta_title: Compra y vende productos de segunda mano
+  activerecord:
+    models:
+      product: Producto
+      category: Categoria
+      user: Usuario
+    attributes:
+      product:
+        title: Título
+        description: Descripción
+        price: Precio
+        photo: Foto
+      category:
+        name: Nombre
+      user:
+        email: Email
+        username: Usuario
+        password_digest: Contraseña
+  common:     
+    confirm_message: ¿Estás seguro?
+    back: Volver
+    not_logged_in: Tienes que iniciar sesión o crearte una cuenta
+    login: Iniciar sesión
+    signin: Crear cuenta
+    logout: Cerrar sesión
+    not_authorized: No tienes permiso para esta acción
+    not_found: No existe
+  shared:
+    header:
+      title: Véndelo
+      add_product: Crear nuevo producto
+      see_categories: Ver categorías
+  authentication:
+    users:
+      new:
+        title: Registro
+      create:
+        created: Tu cuenta se ha creado correctamente
+    sessions:
+      new:
+        title: Iniciar sesión
+      create:
+        created: Sesión iniciada correctamente
+        failed: Usuario y/o contraseña incorrectos
+      destroy:
+        destroyed: Has cerrado tu sesión. Hasta otra.
+  products:
+    product:
+      owner_text: Publicado por
+    index:
+      title: Productos
+      all: Todos
+      min_price: Precio mínimo
+      max_price: Precio máximo
+      query_text: Busca palabra clave 
+      newest: Recientes
+      cheaper: Más baratos
+      more_expensive: Más caros
+    show:
+      edit: Editar
+      delete: Eliminar
+      owner_text: Publicado por
+    new:
+      title: Crear producto
+    edit:
+      title: Editar producto
+    create:
+      created: Producto creado correctamente
+    update: 
+      updated: Producto actualizado correctamente
+    destroy:
+      destroyed: Producto eliminado correctamente
+  categories:
+    index:
+      title: Categorias
+      add: Añadir categoría
+    category:
+      edit: Editar
+      delete: Eliminar
+    new:
+      title: Crear categoría
+    edit:
+      title: Editar categoría     
+    create:
+      created: Categoría creada correctamente
+    update: 
+      updated: Categoría actualizada correctamente
+    destroy:
+      destroyed: Categoría eliminada correctamente
+  users:
+    show:
+      other_products: Otros productos publicados
+    
+ 

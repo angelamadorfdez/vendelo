@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
     # end
    
     @products = FindProducts.new.call(product_params_index).load_async
-    @pagy, @products = pagy_countless(@products, items: 10)
+    @pagy, @products = pagy_countless(@products, items: 12)
 
     # MÁS SIMPLE TODAVÍA
     # @pagy, @products = pagy_countless(FindProducts.new.call(params).load_async, items: 10)
