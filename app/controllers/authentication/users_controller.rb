@@ -8,9 +8,10 @@ class Authentication::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.country = FetchCountryService.new(request.remote_ip).perform
-
+    # User background job instead: @user.country = FetchCountryService.new(request.remote_ip).perform
+    
     if @user.save
+      FetchCountryJob.perform_later(@user.id, request.remote_ip) # Background job call
       session[:user_id] = @user.id
       redirect_to products_path, notice: t('.created')
     else
